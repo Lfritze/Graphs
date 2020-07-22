@@ -12,20 +12,22 @@ class Graph:
     def add_vertex(self, vertex_id):
         """
         Add a vertex to the graph.
-        """
-        pass  # TODO
+        """         
+        # add a node
+        self.vertices[vertex_id] = set()
+
 
     def add_edge(self, v1, v2):
         """
         Add a directed edge to the graph.
         """
-        pass  # TODO
+        self.vertices[v1].add(v2)
 
     def get_neighbors(self, vertex_id):
         """
         Get all neighbors (edges) of a vertex.
         """
-        pass  # TODO
+        return self.vertices[vertex_id]
 
     def bft(self, starting_vertex):
         """
@@ -76,21 +78,28 @@ class Graph:
         beginning from starting_vertex.
         """
         # make a stack
-
+        s = Stack()
         # push our starting node onto the stack
+        s.push(starting_vertex)
 
         # Make a set to track the nodes we've visited
+        visited = set()
 
         # As long as stack isn't empty
-
+        while s.size() > 0:
         ## pop off the top, this is our current node
-
+            current_node = s.pop()
         ## Check if we have visited this node before and if not:
-
+            if current_node not in visited:
         ### mark it as visited
+                visited.add(current_node)
+                print(current_node)
         ### get its neighbors
+                neighbors = self.get_neighbors(current_node)
         ### iterate over neighbors
+                for neighbor in neighbors:
         ### add them to our stack
+                    s.push(neighbor)
 
     def dft_recursive(self, starting_vertex):
         """
