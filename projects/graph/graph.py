@@ -100,8 +100,8 @@ class Graph:
             else:
                 visited.add(cur_node)
                 print(cur_node)
-        
-            for neighbor in self.get_neighbors(cur_node):
+            neighbors = self.get_neighbors(cur_node)
+            for neighbor in neighbors:
                 dft(neighbor)
         dft(starting_vertex)
 
