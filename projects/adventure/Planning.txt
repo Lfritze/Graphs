@@ -1,0 +1,9 @@
+
+filling `traversal_path` with directions that, when walked in order, will visit every room on the map at least once.
+
+An incomplete list of directions. Your task is to fill this with valid traversal directions.
+
+get_dir
+
+
+reverse = {'n': 's', 's': 'n', 'w': 'e', 'e': 'w'}
